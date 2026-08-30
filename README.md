@@ -55,3 +55,10 @@ Run `python listsongs.py --help` for every option.
 ## Legacy version
 
 The original 2017 Python 2 scripts, dependency pins, and historical `songs.txt` are preserved in [`legacy/`](legacy/README.md).
+
+## Apple Music import
+
+The [`apple-music-shortcut/`](apple-music-shortcut/README.md) package contains
+deduplicated 100-song batches and a complete iOS/iPadOS Shortcut recipe. The
+Shortcut loads one batch from an iCloud Drive folder, searches by artist and
+song, adds matches to an Apple Music playlist, and deletes the completed batch.
