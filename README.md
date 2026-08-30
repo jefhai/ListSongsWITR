@@ -59,6 +59,6 @@ The original 2017 Python 2 scripts, dependency pins, and historical `songs.txt` 
 ## Apple Music import
 
 The [`apple-music-shortcut/`](apple-music-shortcut/README.md) package contains
-deduplicated 100-song batches and a complete iOS/iPadOS Shortcut recipe. The
+deduplicated 100-song batches and a ready-made iOS/iPadOS `.shortcut` file. The
 Shortcut loads one batch from an iCloud Drive folder, searches by artist and
 song, adds matches to an Apple Music playlist, and deletes the completed batch.

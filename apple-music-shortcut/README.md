@@ -19,8 +19,9 @@ next batch.
 3. Create an empty `Logs` folder beside `Inbox`.
 4. In Music, create the playlist that will receive the songs, for example
    `WITR Songs`.
-5. Build the Shortcut from
-   [`shortcut/WITR Apple Music Import.md`](shortcut/WITR%20Apple%20Music%20Import.md).
+5. Open
+   [`shortcut/WITR Apple Music Import.shortcut`](shortcut/WITR%20Apple%20Music%20Import.shortcut)
+   on the iPhone or iPad and add it to Shortcuts.
 
 On the first run, allow access to iCloud Drive, the iTunes Store, and Music.
 The file deletion action may also ask for permission; choose the persistent
@@ -61,11 +62,14 @@ Change the batch size if needed:
 python apple-music-shortcut/prepare_batches.py --batch-size 50
 ```
 
-## Why the repository contains a build recipe
+## Rebuild the Shortcut file
 
-Apple requires shared Shortcut files to be exported and validated by Apple.
-That export/signing step is available in the Shortcuts app on an Apple device,
-not on Windows. The action recipe in this package is therefore the complete,
-auditable Shortcut source, but it is not mislabeled as an importable
-`.shortcut` file. After building it once on an iPhone, iPad, or Mac, use Share
-in Shortcuts to export the validated file or create an iCloud link.
+The checked-in `.shortcut` is generated directly as an Apple binary property
+list. To reproduce it after changing the workflow:
+
+```console
+python apple-music-shortcut/build_shortcut.py
+```
+
+The destination playlist is `WITR Songs`. Change `WFPlaylistName` in the
+builder and regenerate the file to use a different playlist.
